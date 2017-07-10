@@ -1,0 +1,7 @@
+<app-selected-hero></app-selected-hero>
+<div *ngFor="let hero of heroes"
+      class="heroPortrait">
+  <img [src]="'../../assets/images/' + hero.imgURL + '.png'"
+      (mouseover)="onSelectNewHero(hero)">
+</div>
+

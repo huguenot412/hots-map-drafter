@@ -1,0 +1,17 @@
+<div id="selectedHeroContainer">
+  <h3 *ngIf="!selectedHero">Select a Hero</h3>
+  <div *ngIf="selectedHero">
+    <img [src]="'../../assets/images/' + selectedHero.imgURL + '-lrg.jpg'"
+          class="selectedHero">
+    <div class="heroStats">
+      <h3>{{selectedHero.name}}</h3>
+      <h4>{{selectedHero.role}}</h4>
+      <p>Global: {{selectedHero.global}}</p>
+      <p>Wave Clear: {{selectedHero.waveClear}}</p>
+      <p>Point Control: {{selectedHero.pointControl}}</p>
+      <p>Mercenaries: {{selectedHero.mercs}}</p>
+      <p>Solo Lane: {{selectedHero.solo}}</p>
+    </div>
+  </div>
+</div>
+

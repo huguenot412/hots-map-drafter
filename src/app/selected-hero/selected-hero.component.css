@@ -1,0 +1,16 @@
+.selectedHero {
+    height: 300px;
+    top: 0;
+    vertical-align: top;
+}
+
+#selectedHeroContainer{
+    height: 400px;
+    width: 300px;
+    margin-left: 10px;
+    float: left;
+}
+
+.heroStats {
+    display: block;
+}
