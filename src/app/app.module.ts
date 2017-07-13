@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DraftPanelComponent } from './draft-panel/draft-panel.component';
 import { TeamSummaryComponent } from './team-summary/team-summary.component';
 import { BattlegroundComponent } from './battleground/battleground.component';
+import { BattlegroundsService } from './shared/battlegrounds.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { BattlegroundComponent } from './battleground/battleground.component';
     BrowserModule,
     HttpModule
   ],
-  providers: [HeroesDataService, SelectedHeroService],
+  providers: [HeroesDataService, SelectedHeroService, BattlegroundsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

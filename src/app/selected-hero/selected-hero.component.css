@@ -6,11 +6,27 @@
 
 #selectedHeroContainer{
     height: 400px;
-    width: 300px;
+    width: 400px;
     margin-left: 10px;
     float: left;
 }
 
 .heroStats {
-    display: block;
+    display: inline-block;
+}
+
+.heroName {
+    font-size: 1.2em;
+}
+
+.heroRole {
+    font-size: 1em;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+.stat {
+    font-size: .75em;
 }

@@ -1,0 +1,36 @@
+.selectBattlegroundButton {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    border: 2px solid black;
+}
+
+.battlegroundContainer {
+    position: relative;
+    height: 400px;
+}
+
+.battlegroundImage {
+    width: 100%;
+}
+
+.battlegroundThumbnail {
+    width: 100px;
+    display: inline-block;
+}
+
+.battlegroundName {
+    display: inline-block;
+}
+
+.battlegroundMenu {
+    height: 400px;
+    overflow: scroll;
+}
+
+.menuItem {
+    margin-bottom: 5px;
+}

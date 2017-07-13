@@ -1,0 +1,54 @@
+[
+    {
+        "name": "Battlefield of Eternity",
+        "imgURL": "battlefield-of-eternity"
+    },
+    {
+        "name": "Blackheart's Bay",
+        "imgURL": "blackhearts-bay"
+    },
+    {
+        "name": "Braxis Holdout",
+        "imgURL": "braxis-holdout"
+    },
+    {
+        "name": "Cursed Hollow",
+        "imgURL": "cursed-hollow"
+    },
+    {
+        "name": "Dragon Shire",
+        "imgURL": "dragon-shire"
+    },
+    {
+        "name": "Garden of Terror",
+        "imgURL": "garden-of-terror"
+    },
+    {
+        "name": "Hanamura",
+        "imgURL": "hanamura"
+    },
+    {
+        "name": "Haunted Mines",
+        "imgURL": "haunted-mines"
+    },
+    {
+        "name": "Infernal Shrines",
+        "imgURL": "infernal-shrines"
+    },
+    {
+        "name": "Sky Temple",
+        "imgURL": "sky-temple"
+    },
+    {
+        "name": "Tomb of the Spider Queen",
+        "imgURL": "tomb-of-the-spider-queen"
+    },
+    {
+        "name": "Towers of Doom",
+        "imgURL": "towers-of-doom"
+    },
+    {
+        "name": "Warhead Junction",
+        "imgURL": "warhead-junction"
+    }
+]

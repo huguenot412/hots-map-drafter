@@ -1,3 +1,28 @@
-<p>
-  battleground works!
-</p>
+<div 
+    class="battlegroundContainer"
+    *ngIf="!selectBattleground"
+    (mouseenter)="onBattlegroundHover()"
+    (mouseleave)="onBattlegroundExit()">
+    <h3 class="nameHeadline">{{selectedBattleground.name}}</h3>
+    <img 
+        class="battlegroundImage"
+        *ngIf="selectedBattleground"
+        [src]="'../../assets/images/battlegrounds/' + selectedBattleground.imgURL + '.jpg'">
+    <div 
+        class="selectBattlegroundButton"
+        *ngIf="battlegroundHover"
+        (click)="onSelectBattleground()">
+        Select Battleground</div>
+</div>
+<div class="battlegroundMenu"
+    *ngIf="selectBattleground">
+    <div class="menuItem"
+            *ngFor="let battleground of battlegrounds"
+            (click)="onBattlegroundSelected(battleground)">
+        <img [src]="'../../assets/images/battlegrounds/' + battleground.imgURL + '.jpg'"
+             class="battlegroundThumbnail">
+        <div class="battlegroundName">{{battleground.name}}</div>
+    </div>
+</div>
+
+

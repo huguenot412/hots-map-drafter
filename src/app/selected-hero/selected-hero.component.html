@@ -4,13 +4,13 @@
     <img [src]="'../../assets/images/' + selectedHero.imgURL + '-lrg.jpg'"
           class="selectedHero">
     <div class="heroStats">
-      <h3>{{selectedHero.name}}</h3>
-      <h4>{{selectedHero.role}}</h4>
-      <p>Global: {{selectedHero.global}}</p>
-      <p>Wave Clear: {{selectedHero.waveClear}}</p>
-      <p>Point Control: {{selectedHero.pointControl}}</p>
-      <p>Mercenaries: {{selectedHero.mercs}}</p>
-      <p>Solo Lane: {{selectedHero.solo}}</p>
+      <p class="heroName">{{selectedHero.name}}</p>
+      <p class="heroRole">{{selectedHero.role}}</p>
+      <p class="stat">Global: {{selectedHero.global}}</p>
+      <p class="stat">Wave Clear: {{selectedHero.waveClear}}</p>
+      <p class="stat">Point Control: {{selectedHero.pointControl}}</p>
+      <p class="stat">Mercenaries: {{selectedHero.mercs}}</p>
+      <p class="stat">Solo Lane: {{selectedHero.solo}}</p>
     </div>
   </div>
 </div>

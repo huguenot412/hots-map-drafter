@@ -1,7 +1,18 @@
-<app-selected-hero></app-selected-hero>
+<div class="row">
+  <app-selected-hero class="col-md-4"></app-selected-hero>
+  <div class="col-md-8">
+    <div *ngFor="let hero of heroes"
+          class="heroPortrait">
+      <img [src]="'../../assets/images/' + hero.imgURL + '.png'"
+          (mouseover)="onSelectNewHero(hero)">
+    </div>
+  </div>
+</div>
+
+<!--<app-selected-hero></app-selected-hero>
 <div *ngFor="let hero of heroes"
       class="heroPortrait">
   <img [src]="'../../assets/images/' + hero.imgURL + '.png'"
       (mouseover)="onSelectNewHero(hero)">
-</div>
+</div>-->
 
