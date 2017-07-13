@@ -6,6 +6,13 @@
     text-align: center;
     padding: 20px 0;
     border: 2px solid black;
+    transition: .25s;
+}
+
+.selectBattlegroundButton:hover,
+.menuItem:hover {
+    background-color: black;
+    color: white;
 }
 
 .battlegroundContainer {
@@ -15,6 +22,9 @@
 
 .battlegroundImage {
     width: 100%;
+    position: absolute;
+    left: 0;
+    display: block;
 }
 
 .battlegroundThumbnail {
@@ -24,6 +34,8 @@
 
 .battlegroundName {
     display: inline-block;
+    padding-left: 20px;
+    transition: .0s;
 }
 
 .battlegroundMenu {
@@ -33,4 +45,16 @@
 
 .menuItem {
     margin-bottom: 5px;
+    transition: .25s;
+    position: relative;
 }
+
+.menuItem:hover {
+    padding-left: 50px;
+}
+
+.nameHeadline {
+    text-align: center;
+}
+
+
