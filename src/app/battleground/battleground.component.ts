@@ -12,8 +12,7 @@ export class BattlegroundComponent implements OnInit {
 
   battlegrounds: any;
   battlegroundHover: boolean = false;
-  selectBattleground: boolean = false;
-  selectedBattleground: object;
+  selectingBattleground: boolean = false;
 
   constructor( private battlegroundsService: BattlegroundsService ) { }
 
@@ -25,12 +24,10 @@ export class BattlegroundComponent implements OnInit {
         (response) => {
           const data: Response = response.json();
           this.battlegrounds = data;
-          this.selectedBattleground = this.battlegrounds[0];
+          this.battlegroundsService.selectedBattleground = this.battlegrounds[0];
         },
         (error) => console.log(error)
       );
-    // this.selectedBattleground = this.battlegrounds[0];
-    // console.log(this.battlegrounds[0].name);
   }
 
   onBattlegroundHover() {
@@ -42,12 +39,12 @@ export class BattlegroundComponent implements OnInit {
   }
 
   onSelectBattleground() {
-    this.selectBattleground = true;
+    this.selectingBattleground = true;
   }
 
   onBattlegroundSelected(battleground) {
-    this.selectBattleground = false;
-    this.selectedBattleground = battleground;
+    this.selectingBattleground = false;
+    this.battlegroundsService.selectedBattleground = battleground;
   }
 
 }

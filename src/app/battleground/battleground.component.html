@@ -1,13 +1,15 @@
 <div 
     class="battlegroundContainer"
-    *ngIf="!selectBattleground"
+    *ngIf="!selectingBattleground"
     (mouseenter)="onBattlegroundHover()"
     (mouseleave)="onBattlegroundExit()">
-    <h3 class="nameHeadline">{{selectedBattleground.name}}</h3>
+    <h3 class="nameHeadline"
+        *ngIf="battlegroundsService.selectedBattleground">
+        {{battlegroundsService.selectedBattleground.name}}</h3>
     <img 
         class="battlegroundImage"
-        *ngIf="selectedBattleground"
-        [src]="'../../assets/images/battlegrounds/' + selectedBattleground.imgURL + '.jpg'">
+        *ngIf="battlegroundsService.selectedBattleground"
+        [src]="'../../assets/images/battlegrounds/' + battlegroundsService.selectedBattleground.imgURL + '.jpg'">
     <div 
         class="selectBattlegroundButton"
         *ngIf="battlegroundHover"
@@ -15,7 +17,7 @@
         Select Battleground</div>
 </div>
 <div class="battlegroundMenu"
-    *ngIf="selectBattleground">
+    *ngIf="selectingBattleground">
     <div class="menuItem"
             *ngFor="let battleground of battlegrounds"
             (click)="onBattlegroundSelected(battleground)">
