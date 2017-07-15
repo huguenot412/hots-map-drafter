@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { DraftSelectionComponent } from '../draft-selection/draft-selection.component';
+import { TeamStatsComponent } from '../team-stats/team-stats.component';
+import { TeamSummaryService } from '../shared/team-summary.service';
+
 @Component({
   selector: 'app-team-summary',
   templateUrl: './team-summary.component.html',
@@ -7,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamSummaryComponent implements OnInit {
 
-  constructor() { }
+  redTeam
+  blueTeam
+
+  constructor( private teamSummaryService: TeamSummaryService) { }
 
   ngOnInit() {
+    this.redTeam = this.teamSummaryService.redDraftBoxes;
+    this.blueTeam = this.teamSummaryService.blueDraftBoxes;
   }
 
 }

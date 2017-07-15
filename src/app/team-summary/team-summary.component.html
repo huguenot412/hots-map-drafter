@@ -1,3 +1,11 @@
-<div class="col-md-4">
-  Team Summary
+<div class="row">
+  <div class="col-md-12">
+    <ng-content></ng-content>
+  </div>
+  <div class="selectionContainer col-md-12">
+    <app-draft-selection
+      *ngFor="let draftBox of blueTeam"></app-draft-selection>
+  </div>
+  <app-team-stats class="col-md-12"></app-team-stats>
+
 </div>

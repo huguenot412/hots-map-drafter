@@ -21,3 +21,13 @@ img {
     transition: .25s;
 }
 
+.heroesContainer {
+    position: relative;
+}
+
+.selectedHero {
+    position: absolute;
+    left: 500px;
+    display: inline-block;
+}
+

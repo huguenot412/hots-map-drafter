@@ -1,5 +1,29 @@
 <div class="row">
-  <app-team-summary class="col-md-4"></app-team-summary>
+  <div class="teamSummaryLeft col-md-4">
+    <h3 class="teamName">Blue Team</h3>
+    <div class="draftBoxes" *ngIf="blueTeamDrafts">
+      <div class="selectionBox"
+          *ngFor="let draftBox of blueTeamDrafts"
+          #selectionBox
+          (click)="onSelectDraftBox(draftBox)"
+          [ngClass]="{active: draftBox.isActive}">
+        <p>{{draftBox.hero.name || "Select Hero"}}</p>
+      </div>
+    </div>
+    <app-team-stats></app-team-stats>
+  </div>
   <app-battleground class="col-md-4"></app-battleground>
-  <app-team-summary class="col-md-4"></app-team-summary>
+  <div class="teamSummaryRight col-md-4">
+    <h3 class="teamName">Red Team</h3>
+    <div class="draftBoxes" *ngIf="redTeamDrafts">
+      <div class="selectionBox"
+          *ngFor="let draftBox of redTeamDrafts"
+          #selectionBox
+          (click)="onSelectDraftBox(draftBox)"
+          [ngClass]="{active: draftBox.isActive}">
+        <p>{{draftBox.hero.name || "Select Hero"}}</p>
+      </div>
+    </div>
+    <app-team-stats></app-team-stats>
+  </div>
 </div>
