@@ -1,7 +1,7 @@
 .selectionBox {
-    border: 2px solid black;
-    height: 75px;
-    width: 18%;
+    border: 5px solid black;
+    height: 85px;
+    width: 85px;
     display: inline-block;
     margin-left: 5px;
     vertical-align: top;
@@ -12,5 +12,10 @@ p {
 }
 
 .active {
-    border: solid 2px yellow;
+    border: solid 5px gold;
+}
+
+.draftImage {
+    height: 75px;
+    width: 75px;
 }

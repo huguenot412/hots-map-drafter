@@ -1,13 +1,16 @@
 <div class="row">
   <div class="teamSummaryLeft col-md-4">
     <h3 class="teamName">Blue Team</h3>
-    <div class="draftBoxes" *ngIf="blueTeamDrafts">
+    <div class="draftBoxes">
       <div class="selectionBox"
-          *ngFor="let draftBox of blueTeamDrafts"
+          *ngFor="let draftBox of blueDraftBoxes"
           #selectionBox
           (click)="onSelectDraftBox(draftBox)"
           [ngClass]="{active: draftBox.isActive}">
-        <p>{{draftBox.hero.name || "Select Hero"}}</p>
+        <p *ngIf="!draftBox.hero.imgURL">Select Hero</p>
+        <img *ngIf="draftBox.hero.imgURL"
+             class="draftImage"
+             [src]="'../../assets/images/' + draftBox.hero.imgURL + '.png'">
       </div>
     </div>
     <app-team-stats></app-team-stats>
@@ -15,13 +18,16 @@
   <app-battleground class="col-md-4"></app-battleground>
   <div class="teamSummaryRight col-md-4">
     <h3 class="teamName">Red Team</h3>
-    <div class="draftBoxes" *ngIf="redTeamDrafts">
+    <div class="draftBoxes">
       <div class="selectionBox"
-          *ngFor="let draftBox of redTeamDrafts"
+          *ngFor="let draftBox of redDraftBoxes"
           #selectionBox
           (click)="onSelectDraftBox(draftBox)"
           [ngClass]="{active: draftBox.isActive}">
-        <p>{{draftBox.hero.name || "Select Hero"}}</p>
+        <p *ngIf="!draftBox.hero.imgURL">Select Hero</p>
+        <img *ngIf="draftBox.hero.imgURL"
+             class="draftImage"
+             [src]="'../../assets/images/' + draftBox.hero.imgURL + '.png'">
       </div>
     </div>
     <app-team-stats></app-team-stats>

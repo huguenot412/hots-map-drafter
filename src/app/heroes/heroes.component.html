@@ -4,7 +4,8 @@
         <div *ngFor="let hero of heroes"
             class="heroPortrait">
             <img [src]="'../../assets/images/' + hero.imgURL + '.png'"
-                (mouseover)="onSelectNewHero(hero)">
+                (mouseover)="onSelectNewHero(hero)"
+                (click)="onDraftHero(hero)">
         </div> 
     </div>
 </div>

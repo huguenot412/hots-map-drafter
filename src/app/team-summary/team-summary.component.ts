@@ -17,8 +17,7 @@ export class TeamSummaryComponent implements OnInit {
   constructor( private teamSummaryService: TeamSummaryService) { }
 
   ngOnInit() {
-    this.redTeam = this.teamSummaryService.redDraftBoxes;
-    this.blueTeam = this.teamSummaryService.blueDraftBoxes;
+
   }
 
 }

@@ -5,6 +5,7 @@ import { Subject } from 'rxjs/Subject';
 export class SelectedHeroService {
 
   selectedHero = new Subject();
+  draftedHero = new Subject();
 
   constructor() { }
 

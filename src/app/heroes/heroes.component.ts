@@ -16,7 +16,9 @@ export class HeroesComponent implements OnInit {
 
   constructor( private heroesData: HeroesDataService, private selectedHeroService: SelectedHeroService ) { }
 
-  ngOnInit() { this.getHeroes(); }
+  ngOnInit() { 
+    this.getHeroes(); 
+  }
 
   getHeroes() {
     this.heroesData.getHeroesData()
@@ -34,4 +36,7 @@ export class HeroesComponent implements OnInit {
     this.selectedHeroService.selectedHero.next(hero);
   }
 
+  onDraftHero(hero) {
+    this.selectedHeroService.draftedHero.next(hero);
+  }
 }
