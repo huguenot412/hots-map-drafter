@@ -17,14 +17,14 @@
 
 .battlegroundContainer {
     position: relative;
-    height: 400px;
+    height: 300px;
 }
 
 .battlegroundImage {
-    width: 100%;
     position: absolute;
     left: 0;
     display: block;
+    width: 100%;
 }
 
 .battlegroundThumbnail {
@@ -39,7 +39,7 @@
 }
 
 .battlegroundMenu {
-    height: 400px;
+    height: 300px;
     overflow: scroll;
 }
 

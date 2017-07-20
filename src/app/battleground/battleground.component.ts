@@ -28,18 +28,24 @@ export class BattlegroundComponent implements OnInit {
         },
         (error) => console.log(error)
       );
+    this.battlegroundsService.selectedBattleground = this.battlegrounds[0];
   }
 
-  onBattlegroundHover() {
+  onBattlegroundHover(battleground) {
     this.battlegroundHover = true;
+    
   }
 
   onBattlegroundExit() {
     this.battlegroundHover = false;
   }
 
-  onSelectBattleground() {
+  onSelectBattleground(battleground) {
     this.selectingBattleground = true;
+  }
+
+  onMenuItemHover(battleground) {
+    this.battlegroundsService.displayedBattleground.next(battleground);
   }
 
   onBattlegroundSelected(battleground) {

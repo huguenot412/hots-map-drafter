@@ -13,13 +13,14 @@
     <div 
         class="selectBattlegroundButton"
         *ngIf="battlegroundHover"
-        (click)="onSelectBattleground()">
+        (click)="onSelectBattleground(battleground)">
         Select Battleground</div>
 </div>
 <div class="battlegroundMenu"
     *ngIf="selectingBattleground">
     <div class="menuItem"
             *ngFor="let battleground of battlegrounds"
+            (mouseenter)="onMenuItemHover(battleground)"
             (click)="onBattlegroundSelected(battleground)">
         <img [src]="'../../assets/images/battlegrounds/' + battleground.imgURL + '.jpg'"
              class="battlegroundThumbnail">

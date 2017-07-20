@@ -1,54 +1,80 @@
 [
     {
         "name": "Battlefield of Eternity",
-        "imgURL": "battlefield-of-eternity"
+        "imgURL": "battlefield-of-eternity",
+        "global": 5,
+        "waveClear": 7
     },
     {
         "name": "Blackheart's Bay",
-        "imgURL": "blackhearts-bay"
+        "imgURL": "blackhearts-bay",
+        "global": 4,
+        "waveClear": 9
     },
     {
         "name": "Braxis Holdout",
-        "imgURL": "braxis-holdout"
+        "imgURL": "braxis-holdout",
+        "global": 6,
+        "waveClear": 3
     },
     {
         "name": "Cursed Hollow",
-        "imgURL": "cursed-hollow"
+        "imgURL": "cursed-hollow",
+        "global": 5,
+        "waveClear": 7
     },
     {
         "name": "Dragon Shire",
-        "imgURL": "dragon-shire"
+        "imgURL": "dragon-shire",
+        "global": 4,
+        "waveClear": 9
     },
     {
         "name": "Garden of Terror",
-        "imgURL": "garden-of-terror"
+        "imgURL": "garden-of-terror",
+        "global": 6,
+        "waveClear": 3
     },
     {
         "name": "Hanamura",
-        "imgURL": "hanamura"
+        "imgURL": "hanamura",
+        "global": 5,
+        "waveClear": 7
     },
     {
         "name": "Haunted Mines",
-        "imgURL": "haunted-mines"
+        "imgURL": "haunted-mines",
+        "global": 4,
+        "waveClear": 9
     },
     {
         "name": "Infernal Shrines",
-        "imgURL": "infernal-shrines"
+        "imgURL": "infernal-shrines",
+        "global": 6,
+        "waveClear": 3
     },
     {
         "name": "Sky Temple",
-        "imgURL": "sky-temple"
+        "imgURL": "sky-temple",
+        "global": 5,
+        "waveClear": 7
     },
     {
         "name": "Tomb of the Spider Queen",
-        "imgURL": "tomb-of-the-spider-queen"
+        "imgURL": "tomb-of-the-spider-queen",
+        "global": 4,
+        "waveClear": 9
     },
     {
         "name": "Towers of Doom",
-        "imgURL": "towers-of-doom"
+        "imgURL": "towers-of-doom",
+        "global": 6,
+        "waveClear": 3
     },
     {
         "name": "Warhead Junction",
-        "imgURL": "warhead-junction"
+        "imgURL": "warhead-junction",
+        "global": 5,
+        "waveClear": 7
     }
 ]
