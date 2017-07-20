@@ -15,20 +15,68 @@ import { SelectedHeroService } from '../shared/selected-hero.service';
 })
 export class DraftPanelComponent implements OnInit {
 
-  activeDraftBox = {isActive: false, hero: {}}
+  activeDraftBox
+  highlightedHero
+  previouslyHighlighted
+
+  blueTeamStats = {
+    global: 0,
+    waveClear: 0,
+    pointControl: 0,
+    mercs: 0
+  }
+
+  redTeamStats = {
+    global: 0,
+    waveClear: 0,
+    pointControl: 0,
+    mercs: 0
+  }
+
+  mapStats = {
+    global: 5,
+    waveClear: 0,
+    pointControl: 0,
+    mercs: 0
+  }
 
   constructor( private teamSummaryService: TeamSummaryService,
                private selectedHeroService: SelectedHeroService ) { }
 
   ngOnInit() { 
-    // this.selectedHeroService.selectedHero.subscribe(  
-    //   (hero: object) => {
-    //     this.activeDraftBox.hero = hero;
-    //   });
 
+    this.activeDraftBox = this.blueDraftBoxes[0];
+
+    //When hovering over heroes...
+
+    this.selectedHeroService.selectedHero.subscribe(
+      (hero: object) => {
+        let team
+        if(this.activeDraftBox.team === "blue") {
+          team = this.blueTeamStats;
+        } else {
+          team = this.redTeamStats;
+        }
+        if(this.activeDraftBox.isActive) {
+          if(this.activeDraftBox.hero.name) { this.activeDraftBox.previous = this.activeDraftBox.hero };
+          this.activeDraftBox.hero = hero;
+          if(this.activeDraftBox.previous) {
+            team.global -= this.activeDraftBox.previous.global;
+            team.waveClear -= this.activeDraftBox.previous.waveClear;
+          }
+          team.global += this.activeDraftBox.hero.global;
+          team.waveClear += this.activeDraftBox.hero.waveClear;
+          console.log(this.activeDraftBox.hero.waveClear);
+          console.log(team.waveClear);
+        }
+      }
+    );
+
+    //When you click on selected hero they are locked in to the draft box
     this.selectedHeroService.draftedHero.subscribe(  
       (hero: object) => {
         this.activeDraftBox.isActive = false;
+        this.activeDraftBox.previous = null;
       });
   }
 
@@ -42,52 +90,61 @@ export class DraftPanelComponent implements OnInit {
     }
     this.activeDraftBox = draftBox;
     draftBox.isActive = true;
-
   }
 
   blueDraftBoxes = [
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: "blue"
     },
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: "blue"
     },
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: "blue"
     },
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: "blue"
     },
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: "blue"
     }
   ];
 
   redDraftBoxes = [
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: "red"
     },
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: "red"
     },
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: "red"
     },
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: "red"
     },
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: "red"
     }
   ];
 

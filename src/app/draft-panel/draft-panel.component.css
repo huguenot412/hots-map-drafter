@@ -19,3 +19,21 @@ p {
     height: 75px;
     width: 75px;
 }
+
+.green {
+    color: green;
+}
+
+.grey {
+    color: grey;
+}
+
+.meterBox {
+    display: inline-block;
+}
+
+span {
+    width: 150px;
+    text-align: right;
+    display: inline-block;
+}

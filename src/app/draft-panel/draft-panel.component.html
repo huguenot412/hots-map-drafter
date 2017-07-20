@@ -13,7 +13,273 @@
              [src]="'../../assets/images/' + draftBox.hero.imgURL + '.png'">
       </div>
     </div>
-    <app-team-stats></app-team-stats>
+    <div class="blueTeamStats">
+      <div class="globalMeter">
+        <span>Global: </span>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 1 && mapStats.global < 1" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 1 && mapStats.global >= 1" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 1" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 2 && mapStats.global < 2" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 2 && mapStats.global >= 2" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 2" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 3 && mapStats.global < 3" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 3 && mapStats.global >= 3" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 3" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 4 && mapStats.global < 4" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 4 && mapStats.global >= 4" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 4" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 5 && mapStats.global < 5" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 5 && mapStats.global >= 5" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 5" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 6 && mapStats.global < 6" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 6 && mapStats.global >= 6" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 6" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 7 && mapStats.global < 7" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 7 && mapStats.global >= 7" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 7" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 8 && mapStats.global < 8" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 8 && mapStats.global >= 8" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 8" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 9 && mapStats.global < 9" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 9 && mapStats.global >= 9" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 9" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 10 && mapStats.global < 10" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 10 && mapStats.global >= 10" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 10" class="fa fa-square green"></i>
+        </div>
+      </div>
+      <div class="waveClearMeter">
+        <span>Wave Clear: </span>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.waveClear < 1 && mapStats.waveClear < 1" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.waveClear < 1 && mapStats.waveClear >= 1" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.waveClear >= 1" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.waveClear < 2 && mapStats.waveClear < 2" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.waveClear < 2 && mapStats.waveClear >= 2" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.waveClear >= 2" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.waveClear < 3 && mapStats.waveClear < 3" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.waveClear < 3 && mapStats.waveClear >= 3" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.waveClear >= 3" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.waveClear < 4 && mapStats.waveClear < 4" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.waveClear < 4 && mapStats.waveClear >= 4" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.waveClear >= 4" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.waveClear < 5 && mapStats.waveClear < 5" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.waveClear < 5 && mapStats.waveClear >= 5" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.waveClear >= 5" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.waveClear < 6 && mapStats.waveClear < 6" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.waveClear < 6 && mapStats.waveClear >= 6" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.waveClear >= 6" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.waveClear < 7 && mapStats.waveClear < 7" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.waveClear < 7 && mapStats.waveClear >= 7" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.waveClear >= 7" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.waveClear < 8 && mapStats.waveClear < 8" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.waveClear < 8 && mapStats.waveClear >= 8" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.waveClear >= 8" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.waveClear < 9 && mapStats.waveClear < 9" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.waveClear < 9 && mapStats.waveClear >= 9" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.waveClear >= 9" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.waveClear < 10 && mapStats.waveClear < 10" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.waveClear < 10 && mapStats.waveClear >= 10" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.waveClear >= 10" class="fa fa-square green"></i>
+        </div>
+      </div>
+      <div class="globalMeter">
+        <span>Global: </span>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 1 && mapStats.global < 1" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 1 && mapStats.global >= 1" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 1" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 2 && mapStats.global < 2" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 2 && mapStats.global >= 2" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 2" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 3 && mapStats.global < 3" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 3 && mapStats.global >= 3" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 3" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 4 && mapStats.global < 4" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 4 && mapStats.global >= 4" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 4" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 5 && mapStats.global < 5" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 5 && mapStats.global >= 5" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 5" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 6 && mapStats.global < 6" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 6 && mapStats.global >= 6" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 6" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 7 && mapStats.global < 7" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 7 && mapStats.global >= 7" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 7" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 8 && mapStats.global < 8" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 8 && mapStats.global >= 8" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 8" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 9 && mapStats.global < 9" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 9 && mapStats.global >= 9" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 9" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 10 && mapStats.global < 10" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 10 && mapStats.global >= 10" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 10" class="fa fa-square green"></i>
+        </div>
+      </div>
+      <div class="globalMeter">
+        <span>Global: </span>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 1 && mapStats.global < 1" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 1 && mapStats.global >= 1" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 1" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 2 && mapStats.global < 2" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 2 && mapStats.global >= 2" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 2" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 3 && mapStats.global < 3" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 3 && mapStats.global >= 3" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 3" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 4 && mapStats.global < 4" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 4 && mapStats.global >= 4" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 4" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 5 && mapStats.global < 5" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 5 && mapStats.global >= 5" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 5" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 6 && mapStats.global < 6" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 6 && mapStats.global >= 6" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 6" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 7 && mapStats.global < 7" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 7 && mapStats.global >= 7" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 7" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 8 && mapStats.global < 8" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 8 && mapStats.global >= 8" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 8" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 9 && mapStats.global < 9" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 9 && mapStats.global >= 9" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 9" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 10 && mapStats.global < 10" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 10 && mapStats.global >= 10" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 10" class="fa fa-square green"></i>
+        </div>
+      </div>
+      <div class="globalMeter">
+        <span>Global: </span>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 1 && mapStats.global < 1" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 1 && mapStats.global >= 1" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 1" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 2 && mapStats.global < 2" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 2 && mapStats.global >= 2" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 2" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 3 && mapStats.global < 3" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 3 && mapStats.global >= 3" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 3" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 4 && mapStats.global < 4" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 4 && mapStats.global >= 4" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 4" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 5 && mapStats.global < 5" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 5 && mapStats.global >= 5" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 5" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 6 && mapStats.global < 6" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 6 && mapStats.global >= 6" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 6" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 7 && mapStats.global < 7" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 7 && mapStats.global >= 7" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 7" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 8 && mapStats.global < 8" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 8 && mapStats.global >= 8" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 8" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 9 && mapStats.global < 9" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 9 && mapStats.global >= 9" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 9" class="fa fa-square green"></i>
+        </div>
+        <div class="meterBox">
+          <i *ngIf="blueTeamStats.global < 10 && mapStats.global < 10" class="fa fa-square-o"></i>
+          <i *ngIf="blueTeamStats.global < 10 && mapStats.global >= 10" class="fa fa-square grey"></i>
+          <i *ngIf="blueTeamStats.global >= 10" class="fa fa-square green"></i>
+        </div>
+      </div>
+    </div>
   </div>
   <app-battleground class="col-md-4"></app-battleground>
   <div class="teamSummaryRight col-md-4">
