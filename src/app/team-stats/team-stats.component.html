@@ -1,54 +1,11 @@
-<div class="globalMeter">
+<div class="globalMeter"
+     *ngFor="let meter of meters">
   <span>Global: </span>
-  <div class="meterBox">
-    <i *ngIf="blueTeamStats.global < 1 && mapStats.global < 1" class="fa fa-square-o"></i>
-    <i *ngIf="blueTeamStats.global < 1 && mapStats.global >= 1" class="fa fa-square grey"></i>
-    <i *ngIf="blueTeamStats.global >= 1" class="fa fa-square green"></i>
-  </div>
-  <div class="meterBox">
-    <i *ngIf="blueTeamStats.global < 2 && mapStats.global < 2" class="fa fa-square-o"></i>
-    <i *ngIf="blueTeamStats.global < 2 && mapStats.global >= 2" class="fa fa-square grey"></i>
-    <i *ngIf="blueTeamStats.global >= 2" class="fa fa-square green"></i>
-  </div>
-  <div class="meterBox">
-    <i *ngIf="blueTeamStats.global < 3 && mapStats.global < 3" class="fa fa-square-o"></i>
-    <i *ngIf="blueTeamStats.global < 3 && mapStats.global >= 3" class="fa fa-square grey"></i>
-    <i *ngIf="blueTeamStats.global >= 3" class="fa fa-square green"></i>
-  </div>
-  <div class="meterBox">
-    <i *ngIf="blueTeamStats.global < 4 && mapStats.global < 4" class="fa fa-square-o"></i>
-    <i *ngIf="blueTeamStats.global < 4 && mapStats.global >= 4" class="fa fa-square grey"></i>
-    <i *ngIf="blueTeamStats.global >= 4" class="fa fa-square green"></i>
-  </div>
-  <div class="meterBox">
-    <i *ngIf="blueTeamStats.global < 5 && mapStats.global < 5" class="fa fa-square-o"></i>
-    <i *ngIf="blueTeamStats.global < 5 && mapStats.global >= 5" class="fa fa-square grey"></i>
-    <i *ngIf="blueTeamStats.global >= 5" class="fa fa-square green"></i>
-  </div>
-  <div class="meterBox">
-    <i *ngIf="blueTeamStats.global < 6 && mapStats.global < 6" class="fa fa-square-o"></i>
-    <i *ngIf="blueTeamStats.global < 6 && mapStats.global >= 6" class="fa fa-square grey"></i>
-    <i *ngIf="blueTeamStats.global >= 6" class="fa fa-square green"></i>
-  </div>
-  <div class="meterBox">
-    <i *ngIf="blueTeamStats.global < 7 && mapStats.global < 7" class="fa fa-square-o"></i>
-    <i *ngIf="blueTeamStats.global < 7 && mapStats.global >= 7" class="fa fa-square grey"></i>
-    <i *ngIf="blueTeamStats.global >= 7" class="fa fa-square green"></i>
-  </div>
-  <div class="meterBox">
-    <i *ngIf="blueTeamStats.global < 8 && mapStats.global < 8" class="fa fa-square-o"></i>
-    <i *ngIf="blueTeamStats.global < 8 && mapStats.global >= 8" class="fa fa-square grey"></i>
-    <i *ngIf="blueTeamStats.global >= 8" class="fa fa-square green"></i>
-  </div>
-  <div class="meterBox">
-    <i *ngIf="blueTeamStats.global < 9 && mapStats.global < 9" class="fa fa-square-o"></i>
-    <i *ngIf="blueTeamStats.global < 9 && mapStats.global >= 9" class="fa fa-square grey"></i>
-    <i *ngIf="blueTeamStats.global >= 9" class="fa fa-square green"></i>
-  </div>
-  <div class="meterBox">
-    <i *ngIf="blueTeamStats.global < 10 && mapStats.global < 10" class="fa fa-square-o"></i>
-    <i *ngIf="blueTeamStats.global < 10 && mapStats.global >= 10" class="fa fa-square grey"></i>
-    <i *ngIf="blueTeamStats.global >= 10" class="fa fa-square green"></i>
+  <div class="meterBox"
+       *ngFor="let box of meterBoxes">
+    <i *ngIf="teamStats.global.value < box && mapStats.global < box" class="fa fa-square-o"></i>
+    <i *ngIf="teamStats.global.value < box && mapStats.global >= box" class="fa fa-square grey"></i>
+    <i *ngIf="teamStats.global.value >= box" class="fa fa-square green"></i>
   </div>
 </div>
 

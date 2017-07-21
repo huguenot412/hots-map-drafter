@@ -1,0 +1,40 @@
+.selectionBox {
+    border: 5px solid black;
+    height: 85px;
+    width: 85px;
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+p {
+    text-align: center;
+}
+
+.active {
+    border: solid 5px gold;
+}
+
+.draftImage {
+    height: 75px;
+    width: 75px;
+}
+
+.green {
+    color: green;
+}
+
+.grey {
+    color: grey;
+}
+
+.meterBox {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+span {
+    width: 150px;
+    text-align: right;
+    display: inline-block;
+}

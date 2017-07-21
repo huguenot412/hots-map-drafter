@@ -7,7 +7,7 @@ export class TeamSummaryService {
   constructor() { }
 
   activeDraftBox = new Subject();
-  
+ 
 }
 
 
