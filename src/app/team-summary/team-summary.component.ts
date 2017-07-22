@@ -11,11 +11,11 @@ import { BattlegroundsService } from '../shared/battlegrounds.service';
 @Component({
   selector: 'app-team-summary',
   templateUrl: './team-summary.component.html',
-  styleUrls: ['./team-summary.component.css']
+  styleUrls: ['./team-summary.component.css'],
+  providers: [TeamSummaryService]
 })
 export class TeamSummaryComponent implements OnInit {
-
-  activeDraftBox
+  
   highlightedHero
   previouslyHighlighted
   mapStats
@@ -40,84 +40,53 @@ export class TeamSummaryComponent implements OnInit {
 
   ngOnInit() { 
 
-    this.activeDraftBox = this.draftBoxes[0];
-
-    // !!! Need to figure out how to make this dynamic by initializing properly
-    this.mapStats = {
-      "name": "Battlefield of Eternity",
-      "imgURL": "battlefield-of-eternity",
-      "global": 5,
-      "waveClear": 7
-    }
-
-    this.battlegroundsService.displayedBattleground.subscribe(
-      (battleground: object) => {
-        this.mapStats = battleground;
-      }
-    );
-
     //When hovering over heroes...
     this.selectedHeroService.selectedHero.subscribe(
       (hero: object) => {
-        let team = this.teamStats;
-        if(this.activeDraftBox.isActive) {
-          if(this.activeDraftBox.hero.name) { this.activeDraftBox.previous = this.activeDraftBox.hero };
-          this.activeDraftBox.hero = hero;
-          if(this.activeDraftBox.previous) {
-            team.global -= this.activeDraftBox.previous.global;
-            team.waveClear -= this.activeDraftBox.previous.waveClear;
+        if(this.teamSummaryService.activeDraftBox.isActive) {
+          if(this.teamSummaryService.activeDraftBox.hero.name) { 
+            this.teamSummaryService.activeDraftBox.previous = this.teamSummaryService.activeDraftBox.hero 
+          };
+          this.teamSummaryService.activeDraftBox.hero = hero;
+          if(this.teamSummaryService.activeDraftBox.previous) {
+            this.teamStats.global -= this.teamSummaryService.activeDraftBox.previous.global;
+            this.teamStats.waveClear -= this.teamSummaryService.activeDraftBox.previous.waveClear;
+            // this.teamStats.pointControl -= this.teamSummaryService.activeDraftBox.previous.pointControl;
+            // this.teamStats.mercs -= this.teamSummaryService.activeDraftBox.previous.mercs;
           }
-          team.global += this.activeDraftBox.hero.global;
-          team.waveClear += this.activeDraftBox.hero.waveClear;
+          this.teamStats.global += this.teamSummaryService.activeDraftBox.hero.global;
+          this.teamStats.waveClear += this.teamSummaryService.activeDraftBox.hero.waveClear;
+          // this.teamStats.pointControl -= this.teamSummaryService.activeDraftBox.previous.pointControl;
+          // this.teamStats.mercs -= this.teamSummaryService.activeDraftBox.previous.mercs;
         }
       }
     );
-
-    //When you click on selected hero they are locked in to the draft box
-    this.selectedHeroService.draftedHero.subscribe(  
-      (hero: object) => {
-        this.activeDraftBox.isActive = false;
-        this.activeDraftBox.previous = null;
-      });
   }
 
   onSelectDraftBox(draftBox) {
-    this.selectedHeroService.selectedHero.takeUntil(this.selectedHeroService.draftedHero).subscribe(  
-      (hero: object) => {
-        this.activeDraftBox.hero = hero;
-      });
-    if(this.activeDraftBox.isActive) {
-      this.activeDraftBox.isActive = false;
-    }
-    this.activeDraftBox = draftBox;
-    draftBox.isActive = true;
+    this.teamSummaryService.selectActiveDraftBox(draftBox);
   }
 
  draftBoxes = [
     {
       hero: {},
-      isActive: false,
-      team: "blue"
+      isActive: false
     },
     {
       hero: {},
-      isActive: false,
-      team: "blue"
+      isActive: false
     },
     {
       hero: {},
-      isActive: false,
-      team: "blue"
+      isActive: false
     },
     {
       hero: {},
-      isActive: false,
-      team: "blue"
+      isActive: false
     },
     {
       hero: {},
-      isActive: false,
-      team: "blue"
+      isActive: false
     }
   ];
 
