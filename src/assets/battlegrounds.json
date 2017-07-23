@@ -3,78 +3,104 @@
         "name": "Battlefield of Eternity",
         "imgURL": "battlefield-of-eternity",
         "global": 5,
-        "waveClear": 7
+        "waveClear": 7,
+        "pointControl": 6,
+        "mercs": 4
     },
     {
         "name": "Blackheart's Bay",
         "imgURL": "blackhearts-bay",
         "global": 4,
-        "waveClear": 9
+        "waveClear": 9,
+        "pointControl": 6,
+        "mercs": 4
     },
     {
         "name": "Braxis Holdout",
         "imgURL": "braxis-holdout",
         "global": 6,
-        "waveClear": 3
+        "waveClear": 3,
+        "pointControl": 6,
+        "mercs": 4
     },
     {
         "name": "Cursed Hollow",
         "imgURL": "cursed-hollow",
         "global": 5,
-        "waveClear": 7
+        "waveClear": 7,
+        "pointControl": 6,
+        "mercs": 4
     },
     {
         "name": "Dragon Shire",
         "imgURL": "dragon-shire",
         "global": 4,
-        "waveClear": 9
+        "waveClear": 9,
+        "pointControl": 6,
+        "mercs": 4
     },
     {
         "name": "Garden of Terror",
         "imgURL": "garden-of-terror",
         "global": 6,
-        "waveClear": 3
+        "waveClear": 3,
+        "pointControl": 6,
+        "mercs": 4
     },
     {
         "name": "Hanamura",
         "imgURL": "hanamura",
         "global": 5,
-        "waveClear": 7
+        "waveClear": 7,
+        "pointControl": 6,
+        "mercs": 4
     },
     {
         "name": "Haunted Mines",
         "imgURL": "haunted-mines",
         "global": 4,
-        "waveClear": 9
+        "waveClear": 9,
+        "pointControl": 6,
+        "mercs": 4
     },
     {
         "name": "Infernal Shrines",
         "imgURL": "infernal-shrines",
         "global": 6,
-        "waveClear": 3
+        "waveClear": 3,
+        "pointControl": 6,
+        "mercs": 4
     },
     {
         "name": "Sky Temple",
         "imgURL": "sky-temple",
         "global": 5,
-        "waveClear": 7
+        "waveClear": 7,
+        "pointControl": 6,
+        "mercs": 4
     },
     {
         "name": "Tomb of the Spider Queen",
         "imgURL": "tomb-of-the-spider-queen",
         "global": 4,
-        "waveClear": 9
+        "waveClear": 9,
+        "pointControl": 6,
+        "mercs": 4
     },
     {
         "name": "Towers of Doom",
         "imgURL": "towers-of-doom",
         "global": 6,
-        "waveClear": 3
+        "waveClear": 3,
+        "pointControl": 6,
+        "mercs": 4
     },
     {
         "name": "Warhead Junction",
         "imgURL": "warhead-junction",
         "global": 5,
-        "waveClear": 7
+        "waveClear": 7,
+        "pointControl": 6,
+        "mercs": 4
     }
 ]

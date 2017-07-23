@@ -21,11 +21,11 @@ p {
 }
 
 .green {
-    color: green;
+    color: lightseagreen;
 }
 
 .grey {
-    color: grey;
+    color: lightcoral;
 }
 
 .meterBox {
@@ -37,4 +37,9 @@ span {
     width: 150px;
     text-align: right;
     display: inline-block;
+}
+
+i {
+    width: 10px;
+    margin-right: 5px;
 }

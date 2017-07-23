@@ -15,6 +15,7 @@ import { BattlegroundsService } from './shared/battlegrounds.service';
 import { DraftSelectionComponent } from './draft-selection/draft-selection.component';
 import { TeamStatsComponent } from './team-stats/team-stats.component';
 import { TeamSummaryService } from './shared/team-summary.service';
+import { ActiveDraftBoxService } from './shared/active-draft-box.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { TeamSummaryService } from './shared/team-summary.service';
     HeroesDataService, 
     SelectedHeroService, 
     BattlegroundsService,
-    TeamSummaryService],
+    ActiveDraftBoxService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

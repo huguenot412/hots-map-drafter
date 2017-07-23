@@ -7,6 +7,7 @@ import { TeamStatsComponent } from '../team-stats/team-stats.component';
 import { TeamSummaryService } from '../shared/team-summary.service';
 import { SelectedHeroService } from '../shared/selected-hero.service';
 import { BattlegroundsService } from '../shared/battlegrounds.service';
+import { ActiveDraftBoxService } from '../shared/active-draft-box.service';
 
 @Component({
   selector: 'app-team-summary',
@@ -16,6 +17,7 @@ import { BattlegroundsService } from '../shared/battlegrounds.service';
 })
 export class TeamSummaryComponent implements OnInit {
   
+  activeDraftBox
   highlightedHero
   previouslyHighlighted
   mapStats
@@ -36,36 +38,43 @@ export class TeamSummaryComponent implements OnInit {
 
   constructor( private teamSummaryService: TeamSummaryService,
                private battlegroundsService: BattlegroundsService,
-               private selectedHeroService: SelectedHeroService ) { }
+               private selectedHeroService: SelectedHeroService,
+               private activeDraftBoxService: ActiveDraftBoxService ) { }
 
   ngOnInit() { 
+
+    this.activeDraftBoxService.activeDraft.subscribe(
+      (draftBox) => {
+        this.activeDraftBox = this.activeDraftBoxService.activeDraftBox;
+      }
+    )
 
     //When hovering over heroes...
     this.selectedHeroService.selectedHero.subscribe(
       (hero: object) => {
-        if(this.teamSummaryService.activeDraftBox.isActive) {
-          if(this.teamSummaryService.activeDraftBox.hero.name) { 
-            this.teamSummaryService.activeDraftBox.previous = this.teamSummaryService.activeDraftBox.hero 
+        if(this.activeDraftBox.isActive) {
+          if(this.activeDraftBox.hero.name) { 
+            this.activeDraftBoxService.activeDraftBox.previous = this.activeDraftBoxService.activeDraftBox.hero 
           };
-          this.teamSummaryService.activeDraftBox.hero = hero;
-          if(this.teamSummaryService.activeDraftBox.previous) {
-            this.teamStats.global -= this.teamSummaryService.activeDraftBox.previous.global;
-            this.teamStats.waveClear -= this.teamSummaryService.activeDraftBox.previous.waveClear;
-            // this.teamStats.pointControl -= this.teamSummaryService.activeDraftBox.previous.pointControl;
-            // this.teamStats.mercs -= this.teamSummaryService.activeDraftBox.previous.mercs;
+          this.activeDraftBox.hero = hero;
+          if(this.activeDraftBox.previous) {
+            this.teamStats.global -= this.activeDraftBox.previous.global;
+            this.teamStats.waveClear -= this.activeDraftBox.previous.waveClear;
+            this.teamStats.pointControl -= this.activeDraftBox.previous.pointControl;
+            this.teamStats.mercs -= this.activeDraftBox.previous.mercs;
           }
-          this.teamStats.global += this.teamSummaryService.activeDraftBox.hero.global;
-          this.teamStats.waveClear += this.teamSummaryService.activeDraftBox.hero.waveClear;
-          // this.teamStats.pointControl -= this.teamSummaryService.activeDraftBox.previous.pointControl;
-          // this.teamStats.mercs -= this.teamSummaryService.activeDraftBox.previous.mercs;
+          this.teamStats.global += this.activeDraftBox.hero.global;
+          this.teamStats.waveClear += this.activeDraftBox.hero.waveClear;
+          this.teamStats.pointControl += this.activeDraftBox.hero.pointControl;
+          this.teamStats.mercs += this.activeDraftBox.hero.mercs;
         }
       }
     );
   }
 
-  onSelectDraftBox(draftBox) {
-    this.teamSummaryService.selectActiveDraftBox(draftBox);
-  }
+  // onSelectDraftBox(draftBox) {
+  //   this.teamSummaryService.selectActiveDraftBox(draftBox);
+  // }
 
  draftBoxes = [
     {
