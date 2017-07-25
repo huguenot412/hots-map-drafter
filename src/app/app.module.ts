@@ -37,7 +37,8 @@ import { ActiveDraftBoxService } from './shared/active-draft-box.service';
     HeroesDataService, 
     SelectedHeroService, 
     BattlegroundsService,
-    ActiveDraftBoxService],
+    ActiveDraftBoxService,
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

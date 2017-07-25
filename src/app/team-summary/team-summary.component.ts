@@ -22,12 +22,7 @@ export class TeamSummaryComponent implements OnInit {
   previouslyHighlighted
   mapStats
   meterBoxes = [1,2,3,4,5,6,7,8,9,10]
-  teamStats = {
-    global: 0,
-    waveClear: 0,
-    pointControl: 0,
-    mercs: 0
-  }
+  teamStats
   
   statMeters = [
     {name: "Wave Clear", ref: "waveClear"},
@@ -42,39 +37,16 @@ export class TeamSummaryComponent implements OnInit {
                private activeDraftBoxService: ActiveDraftBoxService ) { }
 
   ngOnInit() { 
+    this.teamStats = {
+      global: 0,
+      waveClear: 0,
+      pointControl: 0,
+      mercs: 0
+    }
 
-    this.activeDraftBoxService.activeDraft.subscribe(
-      (draftBox) => {
-        this.activeDraftBox = this.activeDraftBoxService.activeDraftBox;
-      }
-    )
+    this.teamSummaryService.calculateMeters(this.teamStats);
 
-    //When hovering over heroes...
-    this.selectedHeroService.selectedHero.subscribe(
-      (hero: object) => {
-        if(this.activeDraftBox.isActive) {
-          if(this.activeDraftBox.hero.name) { 
-            this.activeDraftBoxService.activeDraftBox.previous = this.activeDraftBoxService.activeDraftBox.hero 
-          };
-          this.activeDraftBox.hero = hero;
-          if(this.activeDraftBox.previous) {
-            this.teamStats.global -= this.activeDraftBox.previous.global;
-            this.teamStats.waveClear -= this.activeDraftBox.previous.waveClear;
-            this.teamStats.pointControl -= this.activeDraftBox.previous.pointControl;
-            this.teamStats.mercs -= this.activeDraftBox.previous.mercs;
-          }
-          this.teamStats.global += this.activeDraftBox.hero.global;
-          this.teamStats.waveClear += this.activeDraftBox.hero.waveClear;
-          this.teamStats.pointControl += this.activeDraftBox.hero.pointControl;
-          this.teamStats.mercs += this.activeDraftBox.hero.mercs;
-        }
-      }
-    );
   }
-
-  // onSelectDraftBox(draftBox) {
-  //   this.teamSummaryService.selectActiveDraftBox(draftBox);
-  // }
 
  draftBoxes = [
     {

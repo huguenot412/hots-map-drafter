@@ -23,16 +23,16 @@ activeDraft = new Subject();
       });
   }
 
-  // selectActiveDraftBox(draftBox) {
-  //   this.selectedHeroService.selectedHero.takeUntil(this.selectedHeroService.draftedHero).subscribe(  
-  //     (hero: object) => {
-  //       this.activeDraftBox.hero = hero;
-  //     });
-  //   if(this.activeDraftBox.isActive) {
-  //     this.activeDraftBox.isActive = false;
-  //   }
-  //   this.activeDraftBox = draftBox;
-  //   draftBox.isActive = true;
-  // }
+  selectActiveDraftBox(draftBox) {
+    this.selectedHeroService.selectedHero.takeUntil(this.selectedHeroService.draftedHero).subscribe(  
+      (hero: object) => {
+        this.activeDraftBox.hero = hero;
+      });
+    if(this.activeDraftBox.isActive) {
+      this.activeDraftBox.isActive = false;
+    }
+    this.activeDraftBox = draftBox;
+    draftBox.isActive = true;
+  }
 
 }
