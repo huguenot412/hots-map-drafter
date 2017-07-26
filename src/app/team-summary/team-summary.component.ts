@@ -37,14 +37,14 @@ export class TeamSummaryComponent implements OnInit {
                private activeDraftBoxService: ActiveDraftBoxService ) { }
 
   ngOnInit() { 
-    this.teamStats = {
-      global: 0,
-      waveClear: 0,
-      pointControl: 0,
-      mercs: 0
-    }
+    // this.teamStats = {
+    //   global: 0,
+    //   waveClear: 0,
+    //   pointControl: 0,
+    //   mercs: 0
+    // }
 
-    this.teamSummaryService.calculateMeters(this.teamStats);
+    this.teamSummaryService.calculateMeters();
 
   }
 

@@ -15,18 +15,28 @@ export class TeamSummaryService {
   constructor( private selectedHeroService: SelectedHeroService,
                private battlegroundsService: BattlegroundsService,
                private activeDraftBoxService: ActiveDraftBoxService ) { 
-    
+    // this.activeDraftBoxService.updateActiveDraftBox.subscribe(
+    //   () => {
+    //     this.activeDraftBox.hero.global = this.activeDraftBoxService.activeDraftBox.hero.global;
+    //     this.activeDraftBox.hero.waveClear = this.activeDraftBoxService.activeDraftBox.hero.waveClear;
+    //     this.activeDraftBox.hero.mercs = this.activeDraftBoxService.activeDraftBox.hero.mercs;
+    //     this.activeDraftBox.hero.pointControl = this.activeDraftBoxService.activeDraftBox.hero.pointControl;
+
+    //   }
+    // )
+
     this.activeDraftBox = {
       hero: {},
       isActive: false,
       previous: null
     };
 
-    this.selectedHeroService.draftedHero.subscribe(  
-      (hero: object) => {
-        this.activeDraftBox.isActive = false;
-        this.activeDraftBox.previous = null;
-      });
+    this.teamStats = {
+      global: 0,
+      waveClear: 0,
+      pointControl: 0,
+      mercs: 0
+    }
 
     // !!! Need to figure out how to make this dynamic by initializing properly
     this.mapStats = {
@@ -46,46 +56,65 @@ export class TeamSummaryService {
 
     this.selectedHeroService.draftedHero.subscribe(  
       (hero: object) => {
-        this.activeDraftBox.isActive = false;
-        this.activeDraftBox.previous = null;
+        this.activeDraftBoxService.activeDraftBox.isActive = false;
+        this.activeDraftBoxService.activeDraftBox.previous = null;
+        this.activeDraftBoxService.updateActiveDraftBox.next();
       });
+
+    // this.updateTeamStats.subscribe(
+    //   () => {
+    //     if(this.activeDraftBoxService.activeDraftBox.previous) {
+    //       this.teamStats.global -= this.activeDraftBoxService.activeDraftBox.previous.global;
+    //       this.teamStats.waveClear -= this.activeDraftBoxService.activeDraftBox.previous.waveClear;
+    //       this.teamStats.pointControl -= this.activeDraftBoxService.activeDraftBox.previous.pointControl;
+    //       this.teamStats.mercs -= this.activeDraftBoxService.activeDraftBox.previous.mercs;
+    //     }
+    //     this.teamStats.global += this.activeDraftBoxService.activeDraftBox.hero.global;
+    //     this.teamStats.waveClear += this.activeDraftBoxService.activeDraftBox.hero.waveClear;
+    //     this.teamStats.pointControl += this.activeDraftBoxService.activeDraftBox.hero.pointControl;
+    //     this.teamStats.mercs += this.activeDraftBoxService.activeDraftBox.hero.mercs;
+    //   }
+    // )
   }
 
-  calculateMeters(teamStats){
+  calculateMeters(){
     this.selectedHeroService.selectedHero.subscribe(
       (hero: object) => {
-        if(this.activeDraftBox.isActive) {
-          if(this.activeDraftBox.hero.name) { 
-            this.activeDraftBox.previous = this.activeDraftBox.hero 
+        if(this.activeDraftBoxService.activeDraftBox.isActive) {
+          if(this.activeDraftBoxService.activeDraftBox.hero.name) { 
+            this.activeDraftBoxService.activeDraftBox.previous = this.activeDraftBoxService.activeDraftBox.hero 
           };
-          this.activeDraftBox.hero = hero;
-          if(this.activeDraftBox.previous) {
-            teamStats.global -= this.activeDraftBox.previous.global;
-            teamStats.waveClear -= this.activeDraftBox.previous.waveClear;
-            teamStats.pointControl -= this.activeDraftBox.previous.pointControl;
-            teamStats.mercs -= this.activeDraftBox.previous.mercs;
+        this.activeDraftBoxService.activeDraftBox.hero = hero;
+          if(this.activeDraftBoxService.activeDraftBox.previous) {
+            this.teamStats.global -= this.activeDraftBoxService.activeDraftBox.previous.global;
+            this.teamStats.waveClear -= this.activeDraftBoxService.activeDraftBox.previous.waveClear;
+            this.teamStats.pointControl -= this.activeDraftBoxService.activeDraftBox.previous.pointControl;
+            this.teamStats.mercs -= this.activeDraftBoxService.activeDraftBox.previous.mercs;
           }
-          teamStats.global += this.activeDraftBox.hero.global;
-          teamStats.waveClear += this.activeDraftBox.hero.waveClear;
-          teamStats.pointControl += this.activeDraftBox.hero.pointControl;
-          teamStats.mercs += this.activeDraftBox.hero.mercs;
-          // console.log(`Team Stats:${teamStats.global}, Hero Global: ${this.activeDraftBox.hero.global}`);
+          this.teamStats.global += this.activeDraftBoxService.activeDraftBox.hero.global;
+          this.teamStats.waveClear += this.activeDraftBoxService.activeDraftBox.hero.waveClear;
+          this.teamStats.pointControl += this.activeDraftBoxService.activeDraftBox.hero.pointControl;
+          this.teamStats.mercs += this.activeDraftBoxService.activeDraftBox.hero.mercs;
+          console.log(`Team Stats:${this.teamStats.global}, Hero Global: ${this.activeDraftBoxService.activeDraftBox.hero.global}`);
         }
       }
-    );   
-  }
-  selectActiveDraftBox(draftBox) {
-    this.selectedHeroService.selectedHero.takeUntil(this.selectedHeroService.draftedHero).subscribe(  
-      (hero: object) => {
-        this.activeDraftBox.hero = hero;
-      });
-    if(this.activeDraftBox.isActive) {
-      this.activeDraftBox.isActive = false;
-    }
-    this.activeDraftBox = draftBox;
-    draftBox.isActive = true;
-    this.activeDraftBoxService.activeDraft.next(draftBox);
-  } 
+    ); 
+  }  
+  // selectActiveDraftBox(draftBox, draftBoxes) {
+  //   this.selectedHeroService.selectedHero.takeUntil(this.selectedHeroService.draftedHero).subscribe(  
+  //     (hero: object) => {
+  //       // draftBoxes.forEach(function(box){
+  //       //   box.isActive = false;
+  //       // });
+  //       this.activeDraftBoxService.activeDraftBox.hero = hero;
+  //     });
+  //   if(this.activeDraftBoxService.activeDraftBox.isActive) {
+  //     this.activeDraftBoxService.activeDraftBox.isActive = false;
+  //   }
+  //   this.activeDraftBoxService.activeDraftBox = draftBox;
+  //   draftBox.isActive = true;
+  //   this.activeDraftBoxService.activeDraftBoxService.activeDraft.next(draftBox);
+  // } 
 }
 
 
