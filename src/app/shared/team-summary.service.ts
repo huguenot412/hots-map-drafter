@@ -10,7 +10,8 @@ export class TeamSummaryService {
 
   activeDraftBox
   mapStats
-  // teamStats
+  teamStats
+  context
 
   constructor( private selectedHeroService: SelectedHeroService,
                private battlegroundsService: BattlegroundsService,
@@ -31,12 +32,12 @@ export class TeamSummaryService {
       previous: null
     };
 
-    // this.teamStats = {
-    //   global: 0,
-    //   waveClear: 0,
-    //   pointControl: 0,
-    //   mercs: 0
-    // }
+    this.teamStats = {
+      global: 0,
+      waveClear: 0,
+      pointControl: 0,
+      mercs: 0
+    }
 
     // !!! Need to figure out how to make this dynamic by initializing properly
     this.mapStats = {
@@ -77,7 +78,7 @@ export class TeamSummaryService {
     // )
   }
 
-  calculateMeters(teamStats){
+  calculateMeters(){
     this.selectedHeroService.selectedHero.subscribe(
       (hero: object) => {
         if(this.activeDraftBoxService.activeDraftBox.isActive) {
@@ -86,20 +87,22 @@ export class TeamSummaryService {
           };
         this.activeDraftBoxService.activeDraftBox.hero = hero;
           if(this.activeDraftBoxService.activeDraftBox.previous) {
-            teamStats.global -= this.activeDraftBoxService.activeDraftBox.previous.global;
-            teamStats.waveClear -= this.activeDraftBoxService.activeDraftBox.previous.waveClear;
-            teamStats.pointControl -= this.activeDraftBoxService.activeDraftBox.previous.pointControl;
-            teamStats.mercs -= this.activeDraftBoxService.activeDraftBox.previous.mercs;
+            this.teamStats.global -= this.activeDraftBoxService.activeDraftBox.previous.global;
+            this.teamStats.waveClear -= this.activeDraftBoxService.activeDraftBox.previous.waveClear;
+            this.teamStats.pointControl -= this.activeDraftBoxService.activeDraftBox.previous.pointControl;
+            this.teamStats.mercs -= this.activeDraftBoxService.activeDraftBox.previous.mercs;
           }
-          teamStats.global += this.activeDraftBoxService.activeDraftBox.hero.global;
-          teamStats.waveClear += this.activeDraftBoxService.activeDraftBox.hero.waveClear;
-          teamStats.pointControl += this.activeDraftBoxService.activeDraftBox.hero.pointControl;
-          teamStats.mercs += this.activeDraftBoxService.activeDraftBox.hero.mercs;
-          console.log(`Team Stats:${teamStats.global}, Hero Global: ${this.activeDraftBoxService.activeDraftBox.hero.global}`);
+          this.teamStats.global += this.activeDraftBoxService.activeDraftBox.hero.global;
+          this.teamStats.waveClear += this.activeDraftBoxService.activeDraftBox.hero.waveClear;
+          this.teamStats.pointControl += this.activeDraftBoxService.activeDraftBox.hero.pointControl;
+          this.teamStats.mercs += this.activeDraftBoxService.activeDraftBox.hero.mercs;
+          console.log(`Team Stats:${this.teamStats.global}, Hero Global: ${this.activeDraftBoxService.activeDraftBox.hero.global}`);
         }
       }
     ); 
   }  
+  
+  
   // selectActiveDraftBox(draftBox, draftBoxes) {
   //   this.selectedHeroService.selectedHero.takeUntil(this.selectedHeroService.draftedHero).subscribe(  
   //     (hero: object) => {

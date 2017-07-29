@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import 'rxjs/Rx';
 
 import { BattlegroundComponent } from '../battleground/battleground.component';
@@ -23,6 +23,8 @@ export class TeamSummaryComponent implements OnInit {
   mapStats
   meterBoxes = [1,2,3,4,5,6,7,8,9,10]
   teamStats
+  @Input() teamName: string
+
   
   statMeters = [
     {name: "Wave Clear", ref: "waveClear"},
@@ -44,7 +46,7 @@ export class TeamSummaryComponent implements OnInit {
       mercs: 0
     }
 
-    this.teamSummaryService.calculateMeters(this.teamStats);
+    this.teamSummaryService.calculateMeters();
 
   }
 

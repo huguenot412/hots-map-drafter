@@ -1,9 +1,13 @@
 <div class="row">
-  <app-team-summary class="col-md-4">
+  <app-team-summary 
+    class="col-md-4"
+    [teamName]="blueTeamName">
     <h3 class="teamName">Blue Team</h3>
   </app-team-summary>
   <app-battleground class="col-md-4"></app-battleground>
-  <app-team-summary class="col-md-4">
+  <app-team-summary 
+    class="col-md-4"
+    [teamName]="redTeamName">
     <h3 class="teamName">Red Team</h3>
   </app-team-summary>
 </div>

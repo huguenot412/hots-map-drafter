@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import 'rxjs/Rx';
 
 import { TeamSummaryComponent } from '../team-summary/team-summary.component';
@@ -16,8 +16,13 @@ import { BattlegroundsService } from '../shared/battlegrounds.service';
 })
 export class DraftPanelComponent implements OnInit {
 
-  team
+  blueTeamName: string 
+  redTeamName: string 
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.blueTeamName = "Blue"
+    this.redTeamName = "Red"
+
+  }
 
 }

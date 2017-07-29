@@ -22,8 +22,23 @@ updateActiveDraftBox = new Subject();
         this.activeDraftBox.previous = null;
       });
   }
+  
+  // contextDiviner(event) {
+  //   var contextClue = event.currentTarget.parentElement.parentElement.innerText;
+      
+  //   if (contextClue.match(/blue/gi)) {
+  //     return "blue";
+  //   } else if (contextClue.match(/red/gi)) {
+  //     return "red";
+  //   } else {
+  //     return false;
+  //   }
+	
+  // }
 
   selectActiveDraftBox(draftBox) {
+	  // draftBox.context = this.contextDiviner(e);
+	  
     this.selectedHeroService.selectedHero.takeUntil(this.selectedHeroService.draftedHero).subscribe(  
       (hero: object) => {
         this.activeDraftBox.hero = hero;
