@@ -46,30 +46,35 @@ export class TeamSummaryComponent implements OnInit {
       mercs: 0
     }
 
-    this.teamSummaryService.calculateMeters();
+    this.teamSummaryService.calculateMeters(this.teamName);
 
   }
 
  draftBoxes = [
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: this.teamName
     },
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: this.teamName
     },
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: this.teamName
     },
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: this.teamName
     },
     {
       hero: {},
-      isActive: false
+      isActive: false,
+      team: this.teamName
     }
   ];
 
