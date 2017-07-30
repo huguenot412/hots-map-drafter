@@ -4,7 +4,7 @@
       <div class="selectionBox"
           *ngFor="let draftBox of draftBoxes"
           #selectionBox
-          (click)="activeDraftBoxService.selectActiveDraftBox(draftBox, draftBoxes)"
+          (click)="activeDraftBoxService.selectActiveDraftBox(teamName, draftBox);this.teamSummaryService.setContext(teamName)"
           [ngClass]="{active: draftBox.isActive}">
         <p *ngIf="!draftBox.hero.imgURL">Select Hero</p>
         <img *ngIf="draftBox.hero.imgURL"

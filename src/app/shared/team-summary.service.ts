@@ -81,8 +81,8 @@ export class TeamSummaryService {
   calculateMeters(teamName){
     this.selectedHeroService.selectedHero.subscribe(
       (hero: object) => {
-        console.log(`Team: ${teamName}, DraftBox Team: ${this.activeDraftBoxService.activeDraftBox.team}`);
-        if (teamName && teamName == this.activeDraftBoxService.activeDraftBox.team) {
+        console.log(`Team: ${teamName}, DraftBox Team: ${this.activeDraftBoxService.activeDraftBox.context}`);
+        if (this.context && this.context == this.activeDraftBoxService.activeDraftBox.context) {
           if(this.activeDraftBoxService.activeDraftBox.isActive) {
             if(this.activeDraftBoxService.activeDraftBox.hero.name) { 
               this.activeDraftBoxService.activeDraftBox.previous = this.activeDraftBoxService.activeDraftBox.hero 
@@ -104,6 +104,10 @@ export class TeamSummaryService {
       }
     ); 
   }  
+
+  setContext(team) {
+	  this.context = team;	  
+  }
   
   
   // selectActiveDraftBox(draftBox, draftBoxes) {

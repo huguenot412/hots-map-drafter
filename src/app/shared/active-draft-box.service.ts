@@ -37,8 +37,8 @@ updateActiveDraftBox = new Subject();
 	
   // }
 
-  selectActiveDraftBox(draftBox) {
-	  // draftBox.context = this.contextDiviner(e);
+  selectActiveDraftBox(team, draftBox) {
+	  draftBox.context = team;
     this.selectedHeroService.selectedHero.takeUntil(this.selectedHeroService.draftedHero).subscribe(  
       (hero: object) => {
         this.activeDraftBox.hero = hero;
