@@ -16,15 +16,6 @@ export class TeamSummaryService {
   constructor( private selectedHeroService: SelectedHeroService,
                private battlegroundsService: BattlegroundsService,
                private activeDraftBoxService: ActiveDraftBoxService ) { 
-    // this.activeDraftBoxService.updateActiveDraftBox.subscribe(
-    //   () => {
-    //     this.activeDraftBox.hero.global = this.activeDraftBoxService.activeDraftBox.hero.global;
-    //     this.activeDraftBox.hero.waveClear = this.activeDraftBoxService.activeDraftBox.hero.waveClear;
-    //     this.activeDraftBox.hero.mercs = this.activeDraftBoxService.activeDraftBox.hero.mercs;
-    //     this.activeDraftBox.hero.pointControl = this.activeDraftBoxService.activeDraftBox.hero.pointControl;
-
-    //   }
-    // )
 
     this.activeDraftBox = {
       hero: {},
@@ -61,21 +52,6 @@ export class TeamSummaryService {
         this.activeDraftBoxService.activeDraftBox.previous = null;
         this.activeDraftBoxService.updateActiveDraftBox.next();
       });
-
-    // this.updateTeamStats.subscribe(
-    //   () => {
-    //     if(this.activeDraftBoxService.activeDraftBox.previous) {
-    //       this.teamStats.global -= this.activeDraftBoxService.activeDraftBox.previous.global;
-    //       this.teamStats.waveClear -= this.activeDraftBoxService.activeDraftBox.previous.waveClear;
-    //       this.teamStats.pointControl -= this.activeDraftBoxService.activeDraftBox.previous.pointControl;
-    //       this.teamStats.mercs -= this.activeDraftBoxService.activeDraftBox.previous.mercs;
-    //     }
-    //     this.teamStats.global += this.activeDraftBoxService.activeDraftBox.hero.global;
-    //     this.teamStats.waveClear += this.activeDraftBoxService.activeDraftBox.hero.waveClear;
-    //     this.teamStats.pointControl += this.activeDraftBoxService.activeDraftBox.hero.pointControl;
-    //     this.teamStats.mercs += this.activeDraftBoxService.activeDraftBox.hero.mercs;
-    //   }
-    // )
   }
 
   calculateMeters(teamName){
@@ -107,24 +83,7 @@ export class TeamSummaryService {
 
   setContext(team) {
 	  this.context = team;	  
-  }
-  
-  
-  // selectActiveDraftBox(draftBox, draftBoxes) {
-  //   this.selectedHeroService.selectedHero.takeUntil(this.selectedHeroService.draftedHero).subscribe(  
-  //     (hero: object) => {
-  //       // draftBoxes.forEach(function(box){
-  //       //   box.isActive = false;
-  //       // });
-  //       this.activeDraftBoxService.activeDraftBox.hero = hero;
-  //     });
-  //   if(this.activeDraftBoxService.activeDraftBox.isActive) {
-  //     this.activeDraftBoxService.activeDraftBox.isActive = false;
-  //   }
-  //   this.activeDraftBoxService.activeDraftBox = draftBox;
-  //   draftBox.isActive = true;
-  //   this.activeDraftBoxService.activeDraftBoxService.activeDraft.next(draftBox);
-  // } 
+  };
 }
 
 

@@ -2,8 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import 'rxjs/Rx';
 
 import { BattlegroundComponent } from '../battleground/battleground.component';
-import { DraftSelectionComponent } from '../draft-selection/draft-selection.component';
-import { TeamStatsComponent } from '../team-stats/team-stats.component';
 import { TeamSummaryService } from '../shared/team-summary.service';
 import { SelectedHeroService } from '../shared/selected-hero.service';
 import { BattlegroundsService } from '../shared/battlegrounds.service';

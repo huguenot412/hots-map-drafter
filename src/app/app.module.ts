@@ -12,8 +12,6 @@ import { DraftPanelComponent } from './draft-panel/draft-panel.component';
 import { TeamSummaryComponent } from './team-summary/team-summary.component';
 import { BattlegroundComponent } from './battleground/battleground.component';
 import { BattlegroundsService } from './shared/battlegrounds.service';
-import { DraftSelectionComponent } from './draft-selection/draft-selection.component';
-import { TeamStatsComponent } from './team-stats/team-stats.component';
 import { TeamSummaryService } from './shared/team-summary.service';
 import { ActiveDraftBoxService } from './shared/active-draft-box.service';
 
@@ -26,8 +24,6 @@ import { ActiveDraftBoxService } from './shared/active-draft-box.service';
     DraftPanelComponent,
     TeamSummaryComponent,
     BattlegroundComponent,
-    DraftSelectionComponent,
-    TeamStatsComponent
   ],
   imports: [
     BrowserModule,

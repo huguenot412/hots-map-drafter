@@ -14,7 +14,5 @@ export class BattlegroundsService {
   getBattlegroundsData () {
     return this.http.get('../assets/battlegrounds.json');
   }
-
-
-
+  
 }
