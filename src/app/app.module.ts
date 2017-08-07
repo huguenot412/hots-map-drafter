@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router'
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -14,6 +15,16 @@ import { BattlegroundComponent } from './battleground/battleground.component';
 import { BattlegroundsService } from './shared/battlegrounds.service';
 import { TeamSummaryService } from './shared/team-summary.service';
 import { ActiveDraftBoxService } from './shared/active-draft-box.service';
+import { MyPicksComponent } from './my-picks/my-picks.component';
+import { HomeComponent } from './home/home.component';
+import { DraftComponent } from './draft/draft.component';
+
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'my-picks', component: MyPicksComponent},
+  { path: 'draft', component: DraftComponent}
+];
 
 @NgModule({
   declarations: [
@@ -24,10 +35,17 @@ import { ActiveDraftBoxService } from './shared/active-draft-box.service';
     DraftPanelComponent,
     TeamSummaryComponent,
     BattlegroundComponent,
+    MyPicksComponent,
+    HomeComponent,
+    DraftComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true }
+    )
   ],
   providers: [
     HeroesDataService, 
