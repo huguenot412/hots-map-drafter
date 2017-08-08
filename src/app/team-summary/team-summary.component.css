@@ -1,10 +1,13 @@
 .selectionBox {
     border: 5px solid black;
-    height: 85px;
-    width: 85px;
     display: inline-block;
     margin-left: 5px;
     vertical-align: top;
+    width: 85px;
+	height: 85px;
+	/*-webkit-transform: skew(20deg);
+	-moz-transform: skew(20deg);
+	-o-transform: skew(20deg);*/
 }
 
 p {
@@ -42,4 +45,12 @@ span {
 i {
     width: 10px;
     margin-right: 5px;
+}
+
+.red {
+    background-color: red;
+}
+
+.textGreen {
+    color: green;
 }

@@ -22,6 +22,7 @@ import { DraftComponent } from './draft/draft.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'my-picks', component: MyPicksComponent},
   { path: 'draft', component: DraftComponent}
 ];

@@ -57,7 +57,6 @@ export class TeamSummaryService {
   calculateMeters(teamName){
     this.selectedHeroService.selectedHero.subscribe(
       (hero: object) => {
-        console.log(`Team: ${teamName}, DraftBox Team: ${this.activeDraftBoxService.activeDraftBox.context}`);
         if (this.context && this.context == this.activeDraftBoxService.activeDraftBox.context) {
           if(this.activeDraftBoxService.activeDraftBox.isActive) {
             if(this.activeDraftBoxService.activeDraftBox.hero.name) { 
@@ -74,12 +73,21 @@ export class TeamSummaryService {
             this.teamStats.waveClear += this.activeDraftBoxService.activeDraftBox.hero.waveClear;
             this.teamStats.pointControl += this.activeDraftBoxService.activeDraftBox.hero.pointControl;
             this.teamStats.mercs += this.activeDraftBoxService.activeDraftBox.hero.mercs;
-            console.log(`Team Stats:${this.teamStats.global}, Hero Global: ${this.activeDraftBoxService.activeDraftBox.hero.global}`);
           }
         }
       }
     ); 
   }  
+
+  setMeterColor(meterRef: number, box: number) {
+    if(this.teamStats[meterRef] < box && this.mapStats[meterRef] < box) {
+      return ['fa', 'fa-square-o'];
+    } else if (this.teamStats[meterRef] < box && this.mapStats[meterRef] >= box) {
+      return ['fa', 'fa-square', 'grey'];
+    } else {
+      return ['fa', 'fa-square', 'green'];
+    }
+  }
 
   setContext(team) {
 	  this.context = team;	  

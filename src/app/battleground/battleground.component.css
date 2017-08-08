@@ -21,10 +21,14 @@
 }
 
 .battlegroundImage {
-    position: absolute;
-    left: 0;
-    display: block;
-    width: 100%;
+    /*position: absolute;
+    left: 0;*/
+    /*display: block;*/
+    width: 100%
+}
+
+.battlegroundImageContainer {
+    background-repeat: no-repeat;
 }
 
 .battlegroundThumbnail {

@@ -1,31 +1,45 @@
 <div 
-    class="battlegroundContainer"
+    class="battlegroundContainer row"
     *ngIf="!selectingBattleground"
     (mouseenter)="onBattlegroundHover()"
     (mouseleave)="onBattlegroundExit()">
-    <h3 class="nameHeadline"
-        *ngIf="battlegroundsService.selectedBattleground">
-        {{battlegroundsService.selectedBattleground.name}}</h3>
-    <img 
-        class="battlegroundImage"
-        *ngIf="battlegroundsService.selectedBattleground"
-        [src]="'../../assets/images/battlegrounds/' + battlegroundsService.selectedBattleground.imgURL + '.jpg'">
+    <div class="battlegroundImageContainer col-md-5"
+        [style.background]="'url(../../assets/images/battlegrounds/' + battlegroundsService.selectedBattleground.imgURL + '.jpg)'"
+        [style.backgroundRepeat]="'no-repeat'"
+        [style.backgroundPosition]="'center center'"
+        [style.backgroundSize]="'120%'"
+        >
+        <!--<img 
+            class="battlegroundImage"
+            *ngIf="battlegroundsService.selectedBattleground"
+            [src]="'../../assets/images/battlegrounds/' + battlegroundsService.selectedBattleground.imgURL + '.jpg'">-->
+    </div>
+    <div class="col-md-7">
+        <h3 class="nameHeadline"
+            *ngIf="battlegroundsService.selectedBattleground">
+            {{battlegroundsService.selectedBattleground.name}}</h3>
+        <div>
+            Battleground info
+        </div>
+    </div>
     <div 
         class="selectBattlegroundButton"
         *ngIf="battlegroundHover"
         (click)="onSelectBattleground(battleground)">
-        Select Battleground</div>
+        Select Battleground
+    </div>
 </div>
-<div class="battlegroundMenu"
+<div class="battlegroundMenu row"
     *ngIf="selectingBattleground">
-    <div class="menuItem"
-            *ngFor="let battleground of battlegrounds"
-            (mouseenter)="onMenuItemHover(battleground)"
-            (click)="onBattlegroundSelected(battleground)">
+    <div class="menuItem col-md-12"
+        *ngFor="let battleground of battlegrounds"
+        (mouseenter)="onMenuItemHover(battleground)"
+        (click)="onBattlegroundSelected(battleground)">
         <img [src]="'../../assets/images/battlegrounds/' + battleground.imgURL + '.jpg'"
-             class="battlegroundThumbnail">
+            class="battlegroundThumbnail">
         <div class="battlegroundName">{{battleground.name}}</div>
     </div>
 </div>
+
 
 

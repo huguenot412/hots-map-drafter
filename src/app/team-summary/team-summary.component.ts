@@ -22,6 +22,8 @@ export class TeamSummaryComponent implements OnInit {
   meterBoxes = [1,2,3,4,5,6,7,8,9,10]
   teamStats
   @Input() teamName: string
+  color = "red"
+  textColor = "textGreen"
 
   
   statMeters = [
@@ -46,6 +48,10 @@ export class TeamSummaryComponent implements OnInit {
 
     this.teamSummaryService.calculateMeters(this.teamName);
 
+  }
+
+  setMeterColor(meter: number, box: number) {
+    return this.teamSummaryService.setMeterColor(meter, box);
   }
 
  draftBoxes = [
