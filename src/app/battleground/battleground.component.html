@@ -4,10 +4,13 @@
     (mouseenter)="onBattlegroundHover()"
     (mouseleave)="onBattlegroundExit()">
     <div class="battlegroundImageContainer col-md-5"
-        [style.background]="'url(../../assets/images/battlegrounds/' + battlegroundsService.selectedBattleground.imgURL + '.jpg)'"
-        [style.backgroundRepeat]="'no-repeat'"
-        [style.backgroundPosition]="'center center'"
-        [style.backgroundSize]="'120%'"
+        [ngStyle]="{
+            'background': 'url(../../assets/images/battlegrounds/' + battlegroundsService.selectedBattleground.imgURL + '.jpg)',
+            'background-repeat': 'no-repeat',
+            'background-position': 'center center',
+            'background-size': '120%'
+            }"
+
         >
         <!--<img 
             class="battlegroundImage"

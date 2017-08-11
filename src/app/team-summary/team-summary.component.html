@@ -18,12 +18,6 @@
         <div class="meterBox"
             *ngFor="let box of meterBoxes">
           <i [ngClass]="setMeterColor(meter.ref, box)"></i>
-          <!--<i *ngIf="setMeterColor(meter.ref, box) === 'blank'" class="fa fa-square-o"></i>
-          <i *ngIf="setMeterColor(meter.ref, box) === 'grey'" class="fa fa-square grey"></i>
-          <i *ngIf="setMeterColor(meter.ref, box) === 'green'" class="fa fa-square green"></i>-->
-          <!--<i *ngIf="teamSummaryService.teamStats[meter.ref] < box && teamSummaryService.mapStats[meter.ref] < box" class="fa fa-square-o"></i>
-          <i *ngIf="teamSummaryService.teamStats[meter.ref] < box && teamSummaryService.mapStats[meter.ref] >= box" class="fa fa-square grey"></i>
-          <i *ngIf="teamSummaryService.teamStats[meter.ref] >= box" class="fa fa-square green"></i>-->
         </div>
       </div>
     </div>

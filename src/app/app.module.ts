@@ -18,6 +18,7 @@ import { ActiveDraftBoxService } from './shared/active-draft-box.service';
 import { MyPicksComponent } from './my-picks/my-picks.component';
 import { HomeComponent } from './home/home.component';
 import { DraftComponent } from './draft/draft.component';
+import { PicksPanelComponent } from './picks-panel/picks-panel.component';
 
 
 const appRoutes: Routes = [
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     BattlegroundComponent,
     MyPicksComponent,
     HomeComponent,
-    DraftComponent
+    DraftComponent,
+    PicksPanelComponent
   ],
   imports: [
     BrowserModule,

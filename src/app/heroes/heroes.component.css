@@ -3,6 +3,8 @@ img {
 }
 
 .heroPortrait {
+    height: 75px;
+    width: 60px;
     float: left;
     border: 3px solid white;
     vertical-align: top;
